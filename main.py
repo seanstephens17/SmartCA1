@@ -32,5 +32,9 @@ model.add(layers.Flatten())
 model.add(layers.Dense(64, activation='relu'))
 model.add(layers.Dense(10, activation='softmax'))
 
-model.compile(omptimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 model.fit(training_images, training_labels, epochs=10, validation_data=(testing_images, testing_labels))
+
+loss, accuracy = model.evaluate(testing_images, testing_labels)
+print(f"loss: {loss}")
+print(f"accuracy: {accuracy}")
