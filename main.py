@@ -6,8 +6,8 @@ import pickle
 import matplotlib.pyplot as plt
 from tensorflow.keras import datasets, layers, models
 
-DATADIR = "C:\Users\Sean Stephens\OneDrive\Desktop\tiny-imagenet-200"
-CATEGORIES = ['', '']
+DATADIR = "goldfish"
+CATEGORIES = ['goldfish']
 
 for category in CATEGORIES:
     path = os.path.join(DATADIR, category)
@@ -69,7 +69,7 @@ pickle_in = open("y.pickle", "rb")
 y = pickle.load(pickle_in)
 y[1]
 
-(training_images, training_labels), (testing_images, testing_labels) = datasets.load_data("C:\Users\Sean Stephens\OneDrive\Desktop\tiny-imagenet-200\train\n01443537\images")
+(training_images, training_labels), (testing_images, testing_labels) = datasets.load_data("goldfish")
 training_images, testing_images = training_images / 255, testing_images / 255
 
 class_names = ['goldfish']
